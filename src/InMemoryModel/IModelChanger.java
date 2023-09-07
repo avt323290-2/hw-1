@@ -1,5 +1,13 @@
 package InMemoryModel;
 
+/**
+ * Интерфейс для изменения модели и уведомления о изменениях.
+ */
 public interface IModelChanger {
-    public void notifyChange(IModelChanger sender);
+    /**
+     * Метод, который уведомляет о изменении модели.
+     *
+     * @param sender Объект, инициирующий изменение модели.
+     */
+    void notifyChange(IModelChanger sender);
 }

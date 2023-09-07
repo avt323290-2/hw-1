@@ -3,7 +3,15 @@ package src;
 import InMemoryModel.*;
 import ModelElements.*;
 
+/**
+ * Главный класс приложения для демонстрации работы с моделью.
+ */
 public class Main {
+    /**
+     * Главный метод приложения.
+     *
+     * @param args Аргументы командной строки (не используются).
+     */
     public static void main(String[] args) {
         // Создаем экземпляр наблюдателя изменений модели
         IModelChangedObserver observer = new IModelChangedObserver() {

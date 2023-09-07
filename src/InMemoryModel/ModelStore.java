@@ -1,8 +1,10 @@
 package InMemoryModel;
 
 import ModelElements.*;
-import InMemoryModel.IModelChangedObserver;
 
+/**
+ * Класс, представляющий хранилище модели и реализующий интерфейс IModelChanger.
+ */
 public class ModelStore implements IModelChanger {
     public PoligonalModel models;
     public Scene scenes;
@@ -10,6 +12,11 @@ public class ModelStore implements IModelChanger {
     public Camera cameras;
     private IModelChangedObserver changeObserver;
 
+    /**
+     * Конструктор для создания экземпляра ModelStore с передачей наблюдателя изменений.
+     *
+     * @param changeObserver Наблюдатель изменений модели.
+     */
     public ModelStore(IModelChangedObserver changeObserver) {
         this.changeObserver = changeObserver;
 
@@ -20,6 +27,12 @@ public class ModelStore implements IModelChanger {
         this.scenes = new Scene(this.models, this.flashes, this.cameras);
     }
 
+    /**
+     * Получает сцену по индексу.
+     *
+     * @param n Индекс сцены.
+     * @return Объект Scene.
+     */
     public Scene getScene(int n) {
         return this.scenes;
     }
